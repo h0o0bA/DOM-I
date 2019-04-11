@@ -63,3 +63,38 @@ nav.forEach(item => item.style.color = "green");
 nav.forEach((index, i) => nav[i].textContent = siteContent["nav"][`${Object.keys(siteContent["nav"])[i]}`]);
 
 
+// CTA 
+let ctah = document.querySelector("h1");
+ctah.innerHTML = siteContent['cta']['h1'].split(' ').join(`<br>`);
+
+let ctaButton = document.querySelector('button');
+ctaButton.textContent = siteContent['cta']['button'];
+
+
+let headerFour = document.querySelectorAll('h4');
+
+let mainFour = Object.keys(siteContent['main-content']).filter((key) => key.includes('h4'));
+
+headerFour.forEach((index, i) => headerFour[i].textContent = siteContent['main-content'][`${mainFour[i]}`]);
+
+headerFour.forEach(item => item.style.color = "darkgreen");
+
+
+let mainParagraph = document.querySelectorAll('p');
+
+let mainParagraphContent = Object.keys(siteContent['main-content']).filter((key) => key.includes('content'));
+
+mainParagraph.forEach((index, i) => mainParagraph[i].textContent = siteContent['main-content'][`${mainParagraphContent[i]}`]);
+
+
+// Contact 
+
+headerFour[5].textContent = siteContent['contact']['contact-h4'];
+
+mainParagraph[5].innerHTML = siteContent['contact']['address'].split('Street ').join(`Street <br>`);
+
+mainParagraph[6].innerHTML = siteContent['contact']['phone'];
+
+mainParagraph[7].innerHTML = siteContent['contact']['email'];
+
+mainParagraph[8].innerHTML = siteContent['footer']['copyright'];
